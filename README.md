@@ -96,11 +96,7 @@ Que va afficher le code suivant ?
 
 ## Question 11
 
-La réponse à cette question devra être implémentée de la façon suivante :
-
-- créer un projet Symfony étant en mesure d'être lancé sur la dernière version de PHP et avec la dernière version de Symfony ;
-- créer une commande  Symfony
-- la commande symfony devra demandé à l'utilisateur de rentrer l'input (disponible pour vous dans `data/exo/01.txt`)
+La réponse à cette question devra être implémentée en PHP.
 
 Le bingo se joue sur un ensemble de tableauxs composés chacun d'une grille de numéros 5x5.
 Les numéros sont tirés au hasard et le numéro choisi est marqué sur tous les tableaux sur lesquels il
