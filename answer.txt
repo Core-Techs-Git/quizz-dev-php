@@ -1,0 +1,173 @@
+
+## Question 1
+
+Quelle est la dernière version de PHP ?
+
+PHP 8.1
+
+
+## Question 2
+
+En rapport avec la question précédente : qu'est-ce que cette nouvelle version apporte de plus que la précédente ?
+
+La dernière version de PHP est la 8.1. Elle apporte entre autres le nouveau type enum, la possibilité d'initialiser des objets directement dans les paramètres d'une fonction, le type "never" pour les fonctions qui n'ont pas de return, la possibilité de merge des tableaux sans passer par array merge mais avec l'opérateur '...' et aussi des améliorations des performances de PHP.
+
+
+## Question 3
+
+Quelle est la différence entre `include` et `require` ?
+
+include et require servent tous deux à l'ouverture d'un fichier. Mais require interromp l'éxecution si ce fichier n'est pas présent sur le système.
+
+
+## Question 4
+
+Quelle méthodologie utilises-tu pour debugger une application PHP ?
+
+Afin de debugger en PHP je vais d'abord dans les logs pour trouver l'endroit à l'origine du bug, ainsi que la stackTrace. Puis j'effectue du debugging pas à pas.
+
+
+
+## Question 5
+
+Peux-tu expliquer pourquoi dans le code suivant la valeur de `$x` vaut `true` ?
+
+```php
+$x = true and false;
+```
+
+La valeur true est affecté à la variable $x avant que l'expression "and false" soit évalué par PHP.
+
+
+
+## Question 6
+
+Donner des exemples de méthodes magiques en PHP. Quand ces méthodes sont-elles appelées ?
+
+__construct(), __toString(), __isset() sont des méthodes magiques. Elles sont appelées en intermédiaire du cours d'éxecution normal de PHP.
+
+
+
+## Question 7
+
+Qu'est-ce qu'une PSR ? Quelles PSR utilisez-vous ?
+
+Une PSR est une règle de nomenclature, une norme. J'utilise la PSR-12 et m'appuie sur PHPCS pour m'en assurer.
+
+
+
+## Question 8
+
+Qu'est-ce qu'une interface en programmation orientée objet ?
+
+Une interface est un objet qui ne contient que des prototypes de fonctions.
+
+
+
+## Question 9
+
+À quoi servent les design pattern ? Pouvez-vous donner les principaux que vous utilisez ?
+
+Les designs pattern permettent de répondre à des besoins spécifiques. Les iterators, factories et décorateurs sont ceux que j'utilise le plus régulièrement.
+
+
+
+## Question 10
+
+Que va afficher le code suivant ?
+
+
+Le code suivant va afficher : 
+Array
+(
+    [0] => ROLE_USER
+)
+Array
+(
+    [0] => ROLE_USER
+    [1] => ROLE_ADMIN
+)
+
+
+## Question 11
+
+La réponse à cette question devra être implémentée en PHP.
+
+Le bingo se joue sur un ensemble de tableauxs composés chacun d'une grille de numéros 5x5.
+Les numéros sont tirés au hasard et le numéro choisi est marqué sur tous les tableaux sur lesquels il
+apparaît (les nombres peuvent ne pas apparaître sur tous les tableaux).
+
+Si tous les numéros d'une rangée ou d'une colonne d'un tableau sont marqués, ce tableau est gagnant
+(les diagonales ne comptent pas).
+
+Par exemple :
+
+```
+7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
+
+22 13 17 11  0
+ 8  2 23  4 24
+21  9 14 16  7
+ 6 10  3 18  5
+ 1 12 20 15 19
+
+ 3 15  0  2 22
+ 9 18 13 17  5
+19  8  7 25 23
+20 11 10 24  4
+14 21 16 12  6
+
+14 21 17 24  4
+10 16 15  9 19
+18  8 23 26 20
+22 11 13  6  5
+ 2  0 12  3  7
+ ```
+
+Une fois les cinq premiers numéros tirés (7, 4, 9, 5 et 11), il n'y a pas de grilles gagnantes, mais les
+tableaux sont marqués comme suit (indiqués ici côte à côte pour économiser de l'espace) :
+
+![](./data/images/exo1_1.png)
+
+Après le tirage des six numéros suivants (17, 23, 2, 0, 14 et 21), il n'y a toujours pas de gagnant :
+
+![](./data/images/exo1_2.png)
+
+Enfin, 24 est tiré :
+
+![](./data/images/exo1_3.png)
+
+À ce stade, le troisième tableau gagne, car il a au moins une ligne ou une colonne complète de nombres marqués
+(dans ce cas, toute la ligne du haut est marquée : 14 21 17 24 4).
+
+Le score du tableau gagnant peut maintenant être calculé.
+
+Commencez par trouver la somme de tous les nombres non marqués sur ce tableau  dans ce cas, la somme est
+de 188. Ensuite, multipliez cette somme par le nombre qui vient d'être appelé lorsque le tableau a gagné, 24,
+pour obtenir le score final, 188 * 24 = 4512.
+
+Dans la grille [qui vous est donnée ici](./data/exo/01.txt), déterminez quel tableau gagnera en premier.
+
+Quel sera le score final si vous choisissez ce tableau ?
+
+La grille gagnante est la suivante : 
+
+16 62  3 75 84
+54 10  1  2 44
+21 42  0 99 64
+91 45 67 34 82
+83 78 17 53  6
+
+Son score final est de : 55770
+
+/*******/
+
+run script : 
+
+$> php bingo.php
+
+/*******/
+
+
+
+
